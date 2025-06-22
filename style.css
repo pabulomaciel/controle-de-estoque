@@ -1,70 +1,157 @@
-  body {
-    font-family: Helvetica;
-    background-color: #e9e9ee;
-    margin: 0;
-    padding: 20px;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  h1 {
-    text-align: center;
-    color: #f8f7f9;
-  }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
 
-  #task-form {
-    display: flex;
-    margin-bottom: 20px;
-  }
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
 
-  #task-input {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-  }
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
 
-  button {
-    padding: 10px 20px;
-    background-color: #0c5ae1;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 0 4px 4px 0;
-    transition: 0.2s ease-in-out;
-  }
+#task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
-  botton :hover {
-    background-color: #7000bb;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    color:white;
-    font-size: large;
-  }
+#task-input,
+#quantity-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
 
-  li {
-    background-color: #ea0c0c;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration-color: #f8f7f9;
-  }
+button[type="submit"] {
+  background-color: #6e00ff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
 
-  .delete-btn,
-  .edit-btn {
-    background-color: rgb(72, 3, 52);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 10px;
-  }
-  .edit-btn {
-    background-color: green;
-  }
+button[type="submit"]:hover {
+  background-color: #9900ff;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#search-input,
+#sort-select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+.task-info span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.status {
+  font-size: 12px;
+  margin-left: 10px;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.status.low {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.status.ok {
+  background-color: #4dff4d;
+  color: #003300;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions button {
+  margin-left: 6px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.actions .edit { background-color: #00aaff; }
+.actions .delete { background-color: #ff4d4d; }
+
+.actions button:hover {
+  opacity: 0.9;
+}
+
+#export-excel,
+#export-pdf {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #6e00ff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#export-excel:hover,
+#export-pdf:hover {
+  background-color: #9900ff;
+}

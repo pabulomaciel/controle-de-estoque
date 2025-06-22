@@ -1,21 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle de Estoque Premium</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Bibliotecas externas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> 
 </head>
 <body>
-    <div class="container">
-        <h1>Controle de Cargas e estoque</h1>
-        <form id="task-form">
-            <input type="text" id="task-input" placeholder="adicione uma tarefa">
-            <button type="submit">Adicionar tarefa</button>
-        </form>
-        <ul id="task-list"></ul>
 
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>📦 Controle de Estoque</h1>
+
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Nome do produto..." required/>
+      <input type="number" id="quantity-input" placeholder="Quantidade" min="1" required/>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <div class="filters">
+      <input type="text" id="search-input" placeholder="Buscar produto...">
+      <select id="sort-select">
+        <option value="">Ordenar</option>
+        <option value="az">A-Z</option>
+        <option value="za">Z-A</option>
+        <option value="low">Estoque Baixo</option>
+      </select>
+    </div>
+
+    <ul id="task-list"></ul>
+
+    <button id="export-excel">Exportar para Excel</button>
+    <button id="export-pdf">Gerar PDF para Impressão</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
