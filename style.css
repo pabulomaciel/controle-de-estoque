@@ -155,3 +155,65 @@ li:hover {
 #export-pdf:hover {
   background-color: #9900ff;
 }
+/* Responsividade - Mobile */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  #task-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #task-input,
+  #quantity-input {
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-info {
+    margin-bottom: 8px;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .actions button {
+    flex: 1;
+    margin: 0 4px;
+    font-size: 12px;
+  }
+
+  #export-excel,
+  #export-pdf {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Ajuste opcional para mobile */
+.mobile-view input,
+.mobile-view select,
+.mobile-view button {
+  font-size: 16px;
+  padding: 12px;
+}

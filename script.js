@@ -1,4 +1,12 @@
 // script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  if (isMobile) {
+    document.body.classList.add('mobile-view');
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('task-form');
   const taskInput = document.getElementById('task-input');
